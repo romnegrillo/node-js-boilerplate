@@ -1,22 +1,21 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema(
+const blogSchema = new mongoose.Schema(
   {
-    firstName: {
+    title: {
       type: String,
       required: true,
     },
-    lastName: {
+    content: {
       type: String,
       required: true,
     },
-    email: {
-      type: String,
-      required: true,
-    },
-    dateCreated: {
+    datePosted: {
       type: Date,
       required: true,
+    },
+    likes: {
+      type: Number,
     },
   },
   {
@@ -29,6 +28,6 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-const User = mongoose.model("User", userSchema);
+const Blog = mongoose.model("Blog", blogSchema);
 
-module.exports = User;
+module.exports = Blog;
